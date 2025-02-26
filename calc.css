@@ -1,91 +1,78 @@
- *{
-    padding: 0;
-    margin: 0;
+* {
     box-sizing: border-box;
- }
- body{
-    background-color: bisque;
+    margin: 0;
+    padding: 0;
+}
+
+body {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
- }
- .container{
-    overflow: hidden;
-    border-radius: 10px;
+    min-height: 100vh;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, #1a0d00, #ff4500, #ffd700);
+}
+
+.calculator {
+    width: 400px;
     padding: 20px;
-    display: inline-block;
-    background: linear-gradient(to right,rgb(247, 83, 19), rgba(255, 192, 19, 0.808));
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
- }
- .button-container {
-            display: grid;
-            grid-template-columns: 60px 60px 60px 60px; 
-            row-gap: 25px; /* Gap between grid items */
-            column-gap:25px;
-        }
- .grid-item {
-            font-size: 30px;
-            font-family: sans-serif;
-            color: rgb(40, 54, 54);
-            border-radius: 50%;
-            background-color: #d3d2d2;
-            width: 70px;
-            height: 70px;
-            line-height: 70px;
-            text-align: center;
-            border: 2px solid black;
-            transition: background-color .2s ease;
-        }
-
-.grid-item:hover{
-    background: linear-gradient(to right,rgb(247, 83, 19), rgba(255, 192, 19, 0.808)); 
-}
-.grid-item:active{
-    color: #ffffff;
-}
-.screen-container{
-    padding-top: 20px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 40px;
-    text-align: right;
-    background-color: rgb(207, 233, 233);
-    width: 325px;
-    height: 100px;
-    margin-bottom: 20px;
+    background: #222;
     border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.5);
+}
+
+.display {
+    background: #111;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: right;
+    border-radius: 10px;
+    color: #ffd700;
+}
+
+.history {
+    font-size: 18px;
+    color: #ff4500;
+}
+
+.result {
+    font-size: 36px;
+    word-wrap: break-word;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+button {
+    padding: 15px;
+    font-size: 18px;
     border: none;
-}  
-.grid-item1{
-            font-size: 30px;
-            font-family: sans-serif;
-            color: white;
-            border-radius: 50%;
-            background: linear-gradient(to right,rgb(185, 40, 221) ,rgb(223, 39, 70));
-            width: 70px;
-            height: 70px;
-            line-height: 70px;
-            text-align: center;
-            border: 2px solid black;
-            transition: background-color .2s ease;
-}
-.grid-item1:hover{
-    background: linear-gradient(to right,rgb(224, 37, 4), rgba(63, 2, 121, 0.808)); 
+    border-radius: 10px;
+    cursor: pointer;
+    background: #333;
+    color: #ffd700;
+    transition: 0.2s;
 }
 
-
-.grid-item1:active{
-    color: #000000;
+button:hover {
+    transform: scale(1.05);
 }
-.NKB{
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
-    font-family: fantasy;
-    font-size: 30px;
-    margin-bottom: 10px;
-    background: linear-gradient(to right, #ff8a00, #e52e71); /* Define your gradient colors and direction */
-    -webkit-background-clip:text; /* Clip the background to the text */
-    -webkit-text-fill-color: transparent
+
+.function { background: #ff4500; color: white; }
+.operator { background: #ffd700; color: black; }
+.number { background: #444; color: #ffd700; }
+.equals { background: #228b22; color: white; }
+.mode { background: #8b4513; color: white; }
+
+.dark-mode {
+    background: #111;
+    color: #fff;
+}
+
+.dark-mode .calculator {
+    background: #333;
+    border-color: #ff4500;
 }
